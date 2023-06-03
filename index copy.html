@@ -1,62 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head> 
-    <link rel="stylesheet" href="style.css">
+<html>
+  <head>
+    <title>Multi-Step Form</title>
+    <style>
+      .step-form {
+        display: none;
+      }
+      .step-form.active {
+        display: block;
+      }
+    </style>
   </head>
-  
   <body>
-    <div id="intro">
-      <div class="sidebar">
-        <div class="step__indicator">
-          <div class="step__number">1</div>
-          <div class="step__sidebar_and_descr">
-            <p class="step__sidebar">Step 1</p>
-            <p class="step__description">Your Info</p>
-          </div>
-        </div>
-        <div class="step__indicator">
-          <div class="step__number">2</div>
-          <div class="step__sidebar_and_descr">
-            <p class="step__sidebar">Step 2</p>
-            <p class="step__description">Select Plan</p>
-          </div>
-        </div>
-        <div class="step__indicator">
-          <div class="step__number">3</div>
-          <div class="step__sidebar_and_descr">
-            <p class="step__sidebar">Step 3</p>
-            <p class="step__description">Add-ons</p>
-        </div>
-        </div>
-        <div class="step__indicator">
-          <div class="step__number">4</div>
-          <div class="step__sidebar_and_descr">
-            <p class="step__sidebar">Step 4</p>
-            <p class="step__description">Summary</p>
-        </div>
-        </div>
+    <form id="multi-step-form">
+      <div class="step-form active" id="step1">
+        <h2>Step 1</h2>
+        <!-- Step 1 form fields -->
+        <input type="text" name="field1" placeholder="Field 1" />
+        <button type="button" onclick="nextStep('step1', 'step2')">Next</button>
       </div>
-      <div name="steps__container">
-        <form class="step__form" id="form__page1">
-          <div class="steps__container__info">
-            <h1> Personal Info </h1>
-            <p> Please provide your name, email address, and phone number</p>
-          </div>
-          <div class="steps__container__inputs">
-            <div class="steps__container__inputs__name"> 
-              <p>Name</p>
-            </div>
-            <input class="inputs" id="name" name="name" type="text" placeholder="Name"/>
-            <p>Email Adress</p>
-            <input class="inputs" id="email" name="email" type="text" placeholder="Email Address"/>
-            <p>Phone Number</p>
-            <input class="inputs" id="phone_number" name="phone_number" type="text" placeholder="e.g. +1 234 567 890"/>
-          </div>
-          <button class="button"> Next step</button>
-        <form>
-    </div>
-    <footer>
-    </footer>
-    <script src="main.js"></script>
+
+      <div class="step-form" id="step2">
+        <h2>Step 2</h2>
+        <!-- Step 2 form fields -->
+        <input type="text" name="field2" placeholder="Field 2" />
+        <button type="button" onclick="nextStep('step2', 'step3')">Next</button>
+      </div>
+
+      <div class="step-form" id="step3">
+        <h2>Step 3</h2>
+        <!-- Step 3 form fields -->
+        <input type="text" name="field3" placeholder="Field 3" />
+        <button type="button" onclick="nextStep('step3', 'step4')">Next</button>
+      </div>
+
+      <div class="step-form" id="step4">
+        <h2>Step 4</h2>
+        <!-- Step 4 form fields -->
+        <input type="text" name="field4" placeholder="Field 4" />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script>
+      function nextStep(currentStep, nextStep) {
+        document.getElementById(currentStep).classList.remove("active");
+        document.getElementById(nextStep).classList.add("active");
+      }
+    </script>
   </body>
 </html>
