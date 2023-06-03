@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  border: 2px solid whitegrey;
+}
+
+#intro {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  background-color: hsl(243, 100%, 62%);
+  border-radius: 10px;
+  font-family: Ubuntu;
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  background-size: cover;
+}
+
+.step__indicator {
+  display: flex;
+  flex-direction: row;
+  color: hsl(0, 0%, 100%);
+}
+
+.step__number {
+  border: 2px solid white;
+  background-color: hsl(243, 100%, 62%);
+  width: 5px;
+  height: 30px;
+  padding: 0px 25px 25px;
+  border-radius: 50%;
+  color: var(--Light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 15px;
+}
+
+.step__sidebar_and_descr {
+  padding: 0px 25px;
+  text-transform: uppercase;
+}
+
+.step__description {
+  font-weight: 700;
+}
+
+.step__form {
+  padding: 0px 25px;
+}
+
+.steps__container {
+  padding: 0px 30px 30px;
+}
+
+.steps__description {
+  color: grey;
+}
+
+.steps__container__inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.steps__input_name {
+}
+
+.inputs {
+  border-radius: 5px;
+  height: 25px;
+}
+
+.button__div {
+  padding: 30px 15px 10px;
+}
+
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 10px 15px 10px;
+  margin: 40px 0px 0px 350px;
+  border-radius: 5px;
+  background-color: hsl(245, 57%, 34%);
+  color: hsl(0, 0%, 100%);
+}
