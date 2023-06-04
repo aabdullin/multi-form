@@ -24,6 +24,12 @@ body {
   color: hsl(0, 0%, 100%);
 }
 
+.plan-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .step__number {
   border: 2px solid white;
   background-color: hsl(243, 100%, 62%);
