@@ -45,10 +45,6 @@ body {
   text-transform: uppercase;
 }
 
-.step__description {
-  font-weight: 700;
-}
-
 .step__form {
   padding: 0px 25px;
 }

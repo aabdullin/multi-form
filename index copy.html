@@ -1,92 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Multi-Step Form</title>
-  <style>
-    .step-form {
-      display: none;
-    }
-    .step-form.active {
-      display: block;
-    }
-    .sidebar {
-      width: 200px;
-      float: left;
-    }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    .sidebar li {
-      margin-bottom: 10px;
-    }
-    .sidebar li.active {
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="sidebar">
-    <ul>
-      <li class="active" onclick="goToStep(1)">Step 1</li>
-      <li onclick="goToStep(2)">Step 2</li>
-      <li onclick="goToStep(3)">Step 3</li>
-      <li onclick="goToStep(4)">Step 4</li>
-    </ul>
-  </div>
-
-  <form id="multi-step-form">
-    <div class="step-form active" id="step1">
-      <h2>Step 1</h2>
-      <!-- Step 1 form fields -->
-      <input type="text" name="field1" placeholder="Field 1">
-      <button type="button" onclick="nextStep('step1', 'step2')">Next</button>
+  <head>
+    <title>Multi-Step Form</title>
+    <style>
+      .step-form {
+        display: none;
+      }
+      .step-form.active {
+        display: block;
+      }
+      .sidebar {
+        width: 200px;
+        float: left;
+      }
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar li {
+        margin-bottom: 10px;
+      }
+      .sidebar li.active {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li class="active" onclick="goToStep(1)">Step 1</li>
+        <li onclick="goToStep(2)">Step 2</li>
+        <li onclick="goToStep(3)">Step 3</li>
+        <li onclick="goToStep(4)">Step 4</li>
+      </ul>
     </div>
 
-    <div class="step-form" id="step2">
-      <h2>Step 2</h2>
-      <!-- Step 2 form fields -->
-      <input type="text" name="field2" placeholder="Field 2">
-      <button type="button" onclick="nextStep('step2', 'step3')">Next</button>
-    </div>
+    <form id="multi-step-form">
+      <div class="step-form active" id="step1">
+        <h2>Step 1</h2>
+        <!-- Step 1 form fields -->
+        <input type="text" name="field1" placeholder="Field 1" />
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
 
-    <div class="step-form" id="step3">
-      <h2>Step 3</h2>
-      <!-- Step 3 form fields -->
-      <input type="text" name="field3" placeholder="Field 3">
-      <button type="button" onclick="nextStep('step3', 'step4')">Next</button>
-    </div>
+      <div class="step-form" id="step2">
+        <h2>Step 2</h2>
+        <!-- Step 2 form fields -->
+        <input type="text" name="field2" placeholder="Field 2" />
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
 
-    <div class="step-form" id="step4">
-      <h2>Step 4</h2>
-      <!-- Step 4 form fields -->
-      <input type="text" name="field4" placeholder="Field 4">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
+      <div class="step-form" id="step3">
+        <h2>Step 3</h2>
+        <!-- Step 3 form fields -->
+        <input type="text" name="field3" placeholder="Field 3" />
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
 
-  <script>
-    function goToStep(step) {
-      var stepForms = document.getElementsByClassName('step-form');
-      var sidebarItems = document.getElementsByTagName('li');
-      
-      for (var i = 0; i < stepForms.length; i++) {
-        if (i + 1 === step) {
-          stepForms[i].classList.add('active');
-          sidebarItems[i].classList.add('active');
-        } else {
-          stepForms[i].classList.remove('active');
-          sidebarItems[i].classList.remove('active');
+      <div class="step-form" id="step4">
+        <h2>Step 4</h2>
+        <!-- Step 4 form fields -->
+        <input type="text" name="field4" placeholder="Field 4" />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script>
+      var currentStep = 1;
+      var stepForms = document.getElementsByClassName("step-form");
+      var sidebarItems = document.getElementsByTagName("li");
+
+      function goToStep(step) {
+        stepForms[currentStep - 1].classList.remove("active");
+        sidebarItems[currentStep - 1].classList.remove("active");
+
+        stepForms[step - 1].classList.add("active");
+        sidebarItems[step - 1].classList.add("active");
+
+        currentStep = step;
+      }
+
+      function nextStep() {
+        if (currentStep < stepForms.length) {
+          goToStep(currentStep + 1);
         }
       }
-    }
-
-    function nextStep(currentStep, nextStep) {
-      document.getElementById(currentStep).classList.remove('active');
-      document.getElementById(nextStep).classList.add('active');
-      
-      var currentStepIndex = Number(currentStep.replace('step', ''));
-      var nextStepIndex = Number(nextStep.replace('step', ''));
-
-      var sidebarItems = document.getElementsByTagName('li');
-     
+    </script>
+  </body>
+</html>
