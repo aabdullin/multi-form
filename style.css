@@ -24,10 +24,39 @@ body {
   color: hsl(0, 0%, 100%);
 }
 
-.plan-container {
+#plan-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  border-radius: 50%;
+  list-style-type: none;
+  padding: 20px 0px 10px;
+}
+
+.body,
+.plan__image {
+  padding: 10px;
+}
+
+.plan {
+  border-radius: 10%;
+  border: 1px solid rgb(196, 196, 196);
+  width: 140px;
+  margin-right: 20px;
+}
+
+.plan-type {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.plan-amount {
+  color: grey;
+}
+
+.plan-free {
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .step__number {
