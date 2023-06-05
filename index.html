@@ -59,6 +59,7 @@
       </ul>
     </div>
     <form id="multi-step-form">
+      <!-- Step 1 start -->
       <div class="step-form active" id="step1">
         <div class="steps__container">
           <form class="step__form" id="form__page1">
@@ -80,9 +81,10 @@
           <form>
         </div>
       </div>
+      <!-- Step 2 start -->
       <div class="step-form" id="step2">
         <div class="steps__container">
-          <form class="step__form" id="form__page1">
+          <form class="step__form" id="form__page2">
             <div class="steps__container__info">
               <h1> Select your plan </h1>
               <p class="steps__description"> You have the option of monthly or yearly billing</p>
@@ -120,34 +122,48 @@
                   </div>
                 </li>
               </ul>
-
-
             </div>
+            <button class="button" type="button"onclick="nextStep()"> Go back</button>
             <button class="button" type="button"onclick="nextStep()"> Next step</button>
           <form>
         </div>
       </div>
+      <!-- Step 3 start -->
       <div class="step-form" id="step3">
         <div class="steps__container">
           <form class="step__form" id="form__page1">
             <div class="steps__container__info">
-              <h1> Personal Info </h1>
-              <p class="steps__description"> Please provide your name, email address, and phone number</p>
+              <h1> Pick add-ons </h1>
+              <p class="steps__description"> Add-ons help enhance your gaming experience.</p>
             </div>
-            <div class="steps__container__inputs">
-              <div class="steps__container__inputs__name"> 
-                <p class="steps__input_name">Name</p>
-              </div>
-              <input class="inputs" id="name" name="name" type="text" placeholder="e.g. Stephen King"/>
-              <p class="steps__input_name">Email Adress</p>
-              <input class="inputs" id="email" name="email" type="text" placeholder="e.g. stephenking@lorem.com"/>
-              <p class="steps__input_name">Phone Number</p>
-              <input class="inputs" id="phone_number" name="phone_number" type="text" placeholder="e.g. +1 234 567 890"/>
-            </div>
+            <ul id="adds-on-list">
+                <li class="item flex" id="service">
+                  <div class="body">
+                    <span>Online service</span>
+                    <p>Access to multiplayer games</p>
+                    <p>+$10/yr</p>
+                  </div>
+                </li>
+                <li class="item flex" id="storage">
+                  <div class="body">
+                    <span>Larger storage</span>
+                    <p>Extra 1TB of cloud save</p>
+                    <p>+$20/yr</p>
+                  </div>
+                </li>
+                <li class="item flex" id="profile">
+                  <div class="body">
+                    <span>Customizable profile</span>
+                    <p>custom theme on your profile</p>
+                    <p>+$20/yr</p>
+                  </div>
+                </li>
+              </ul>
             <button class="button" type="button"onclick="nextStep()"> Next step</button>
           <form>
         </div>
       </div>
+      <!-- Step 4 start -->
       <div class="step-form" id="step4">
         <div class="steps__container">
           <form class="step__form" id="form__page1">
