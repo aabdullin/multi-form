@@ -135,6 +135,20 @@ body {
   color: hsl(0, 0%, 100%);
 }
 
+.button_step2 {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 10px 15px 10px;
+  margin: 50px 0px 80px 30px;
+  border-radius: 5px;
+  background-color: hsl(245, 57%, 34%);
+  color: hsl(0, 0%, 100%);
+}
+
+
+
 #field1-error {
   color: red;
   padding: 80px 30px 10px;
