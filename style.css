@@ -6,8 +6,8 @@ body {
 }
 
 #step1 {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .sidebar {
@@ -16,6 +16,19 @@ body {
   font-family: Ubuntu;
   background-image: url(./assets/images/bg-sidebar-desktop.svg);
   background-size: cover;
+}
+
+.steps__container__info {
+  padding-left: 200px;
+}
+
+.steps__container__plans {
+  padding-left: 20px;
+}
+
+.steps__container__inputs {
+  padding-left: 30px;
+  width: 400px;
 }
 
 .step__indicator {
@@ -30,7 +43,7 @@ body {
   flex-wrap: wrap;
   border-radius: 50%;
   list-style-type: none;
-  padding: 20px 0px 10px;
+  padding: 20px 30px 10px;
 }
 
 .body,
@@ -120,4 +133,9 @@ body {
   border-radius: 5px;
   background-color: hsl(245, 57%, 34%);
   color: hsl(0, 0%, 100%);
+}
+
+#field1-error {
+  color: red;
+  padding: 80px 30px 10px;
 }

@@ -61,7 +61,7 @@
     <form id="multi-step-form">
       <!-- Step 1 start -->
       <div class="step-form active" id="step1">
-        <div class="steps__container">
+        <div class="steps__container" >
           <form class="step__form" id="form__page1">
             <div class="steps__container__info">
               <h1> Personal Info </h1>
@@ -77,8 +77,10 @@
               <p class="steps__input_name">Phone Number</p>
               <input class="inputs" id="phone_number" name="phone_number" type="text" placeholder="e.g. +1 234 567 890"/>
             </div>
-            <button class="button" type="button" onclick="nextStep()"> Next step</button>
+            <span class="error-message" id="field1-error"></span>
+            <button class="button" type="button" onclick="validateFields(1, 2)"> Next step</button>
           <form>
+
         </div>
       </div>
       <!-- Step 2 start -->
@@ -124,7 +126,8 @@
               </ul>
             </div>
             <button class="button" type="button"onclick="nextStep()"> Go back</button>
-            <button class="button" type="button"onclick="nextStep()"> Next step</button>
+            <span class="error-message" id="field1-error"></span>
+            <button class="button" type="button"onclick="validateFields(2,3)"> Next step</button>
           <form>
         </div>
       </div>
@@ -159,7 +162,8 @@
                   </div>
                 </li>
               </ul>
-            <button class="button" type="button"onclick="nextStep()"> Next step</button>
+              <span class="error-message" id="field1-error"></span>
+            <button class="button" type="button"onclick="validateFields(3,4)"> Next step</button>
           <form>
         </div>
       </div>
@@ -169,22 +173,39 @@
     </footer>
     <script>
       var currentStep = 1;
-      var stepForms = document.getElementsByClassName('step-form');
-      var sidebarItems = document.getElementsByTagName('li');
+      var stepForms = document.getElementsByClassName("step-form");
+      var sidebarItems = document.getElementsByTagName("li");
 
       function goToStep(step) {
-        stepForms[currentStep - 1].classList.remove('active');
-        sidebarItems[currentStep - 1].classList.remove('active');
+        stepForms[currentStep - 1].classList.remove("active");
+        sidebarItems[currentStep - 1].classList.remove("active");
 
-        stepForms[step - 1].classList.add('active');
-        sidebarItems[step - 1].classList.add('active');
+        stepForms[step - 1].classList.add("active");
+        sidebarItems[step - 1].classList.add("active");
 
         currentStep = step;
       }
 
-      function nextStep() {
-        if (currentStep < stepForms.length) {
-          goToStep(currentStep + 1);
+      function validateFields(currentStep, nextStep) {
+        var currentForm = stepForms[currentStep - 1];
+        var inputs = currentForm.getElementsByTagName("input");
+        var errorMessage = document.getElementById(
+          "field" + currentStep + "-error"
+        );
+        var isValid = true;
+
+        for (var i = 0; i < inputs.length; i++) {
+          if (!inputs[i].value) {
+            isValid = false;
+            break;
+          }
+        }
+
+        if (isValid) {
+          errorMessage.textContent = "";
+          goToStep(nextStep);
+        } else {
+          errorMessage.textContent = "Please fill in all required fields.";
         }
       }
     </script>
