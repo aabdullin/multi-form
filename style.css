@@ -5,6 +5,10 @@ body {
   border: 2px solid whitegrey;
 }
 
+h1 {
+  color: #02295a;
+}
+
 .sidebar {
   background-color: hsl(243, 100%, 62%);
   border-radius: 10px;
@@ -210,16 +214,40 @@ body {
 /* Toogle ends: */
 
 #adds-on-list {
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 25px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  width: 480px;
+}
+
+.item flex {
+  padding: 20px;
 }
 
 .details {
   border-radius: 10px;
   border: 1px solid rgb(196, 196, 196);
-  padding: 0px 10px 0px 10px;
+  padding: 10px 10px 0px 10px;
+  margin: 1%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.item input[type="checkbox"] {
+  width: 25px;
+  height: 20px;
+  padding-top: 20px;
+  margin: 19px;
+}
+
+.storage-amount {
+  color: #6662bc;
+  font-weight: 500px;
+}
+
+.service_type {
+  font-weight: 700px;
+  font-size: 18;
 }
