@@ -36,6 +36,12 @@ h1 {
   color: hsl(0, 0%, 100%);
 }
 
+#step__indicator {
+  display: flex;
+  flex-direction: row;
+  color: hsl(0, 0%, 100%);
+}
+
 #plan-container {
   display: flex;
   flex-direction: row;
@@ -208,7 +214,7 @@ h1 {
 }
 
 .toggle input:checked + label::after {
-  transform: translateX(-25px); /* Changed from "translateX(25px);" */
+  transform: translateX(-25px);
 }
 
 /* Toogle ends: */
