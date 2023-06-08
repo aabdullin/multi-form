@@ -125,6 +125,14 @@
                 </li>
               </ul>
             </div>      
+            <div class="duration__flex">
+              <p id="monthly" class="selected plan">Monthly</p>
+              <div class="toggle">
+                <input type="checkbox" id="toggle-btn">
+                <label for="toggle-btn"></label>
+              </div>
+              <p id="yearly" class="selected plan">Yearly</p>
+            </div>
             <div id="buttons_step2">
               <button class="button_step2" id="button_step2" type="button"onclick="nextStep()"> Go back</button>
               <span class="error-message" id="field1-error"></span>
@@ -143,24 +151,39 @@
             </div>
             <ul id="adds-on-list">
                 <li class="item flex" id="service">
-                  <div class="body">
-                    <span>Online service</span>
-                    <p>Access to multiplayer games</p>
-                    <p>+$10/yr</p>
+                  <div class="details">
+                    <input type="checkbox" />
+                    <div class="adds__body">
+                      <span>Online service</span>
+                      <p>Access to multiplayer games</p>
+                    </div>
+                    <div>
+                      <p class="amount storage-amount">$10/yr</p>
+                    </div>
                   </div>
                 </li>
                 <li class="item flex" id="storage">
-                  <div class="body">
-                    <span>Larger storage</span>
-                    <p>Extra 1TB of cloud save</p>
-                    <p>+$20/yr</p>
+                  <div class="details">
+                    <input type="checkbox" />
+                    <div class="adds__body">
+                      <span>Larger storage</span>
+                      <p>Extra 1TB of cloud save</p>
+                    </div>
+                    <div>
+                      <p class="amount storage-amount">+$20/yr</p>
+                    </div>
                   </div>
                 </li>
                 <li class="item flex" id="profile">
-                  <div class="body">
-                    <span>Customizable profile</span>
-                    <p>custom theme on your profile</p>
-                    <p>+$20/yr</p>
+                  <div class="details">
+                    <input type="checkbox" />
+                    <div class="adds__body">
+                      <span>Customizable profile</span>
+                      <p>custom theme on your profile</p>
+                    </div>
+                    <div>
+                      <p class="amount storage-amount">+$20/yr</p>
+                    </div>
                   </div>
                 </li>
               </ul>
