@@ -172,6 +172,7 @@ h1 {
 .duration__flex {
   display: flex;
   flex-direction: row;
+  padding-left: 30px;
 }
 
 /* Toogle: */
@@ -256,4 +257,8 @@ h1 {
 .service_type {
   font-weight: 700px;
   font-size: 18;
+}
+
+.summary {
+  padding: 0px 10px 0px 250px;
 }
